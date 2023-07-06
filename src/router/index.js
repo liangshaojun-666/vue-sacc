@@ -20,6 +20,13 @@ const routes = [
     name: "page2",
     component: PageTwo, //组件还没完善
   },
+  //懒加载代码段
+  // {
+  //   path: "/xxx",
+  //   name: "xxx",
+  //   component: () =>
+  //     import("../views/XXX.vue")
+  // },
 ];
 
 const router = createRouter({
