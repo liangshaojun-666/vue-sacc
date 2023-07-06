@@ -27,6 +27,20 @@ const routes = [
   //   component: () =>
   //     import("../views/XXX.vue")
   // },
+  //懒加载代码段
+  // {
+  //   path: "/xxx",
+  //   name: "xxx",
+  //   component: () =>
+  //     import("../views/XXX.vue")
+  // },
+  //懒加载代码段
+  // {
+  //   path: "/xxx",
+  //   name: "xxx",
+  //   component: () =>
+  //     import("../views/XXX.vue")
+  // },
 ];
 
 const router = createRouter({
