@@ -41,6 +41,11 @@ const routes = [
   //   component: () =>
   //     import("../views/XXX.vue")
   // },
+  //重定向
+  // {
+  //   path: "*",
+  //   redirect: "/",
+  // },
 ];
 
 const router = createRouter({
