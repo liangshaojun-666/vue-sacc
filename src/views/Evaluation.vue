@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p>this is page2</p>
+    这是测评公示界面
   </div>
 </template>
 

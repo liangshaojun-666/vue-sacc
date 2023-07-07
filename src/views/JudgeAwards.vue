@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p>this is page1</p>
+    这是评奖评优界面
   </div>
 </template>
 
