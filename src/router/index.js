@@ -7,15 +7,15 @@ import Login from "../views/Login.vue";
 const routes = [
   //最初的登录主页面，未完善
   {
-    path: "/login",
-    name: "login",
+    path: "/",
+    name: "Login",
     component: Login, //组件还没完善
   },
 
   //综合测评（首页）
   //评奖评优和测评公示为子路由
   {
-    path: "/",
+    path: "/home",
     name: "Home",
     component: Home,
     children: [

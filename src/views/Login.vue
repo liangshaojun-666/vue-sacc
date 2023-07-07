@@ -15,7 +15,7 @@ export default {
   },
   methods: {
     go() {
-      this.$router.push("/totalassessment");
+      this.$router.push("/home/totalassessment");
     },
   },
 };
