@@ -67,6 +67,7 @@ const routes = [
 const router = createRouter({
   history: createWebHistory("/sacc"),
   routes,
+  linkActiveClass: "active",
 });
 
 export default router;
