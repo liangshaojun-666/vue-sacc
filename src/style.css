@@ -94,3 +94,7 @@ button:focus-visible {
 ul{
   list-style: none;
 }
+/* 隐藏鼠标点击这些元素时出现的光标 */
+div, span, p {
+  caret-color: transparent;
+}

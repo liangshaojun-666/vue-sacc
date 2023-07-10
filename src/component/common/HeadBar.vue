@@ -1,12 +1,10 @@
 <script>
+// const Tag_a = document.querySelectorAll(".ShowBorder a");
+// while (Tag_a.active == true) {
+//   Tag_a.active
+// }
+
 export default {
-  data() {
-    return {
-      Show1: true,
-      Show2: false,
-      Show3: false,
-    };
-  },
   methods: {
     active1() {
       this.Show1 = true;
@@ -23,6 +21,13 @@ export default {
       this.Show2 = false;
       this.Show3 = true;
     },
+  },
+  data() {
+    return {
+      Show1: true,
+      Show2: false,
+      Show3: false,
+    };
   },
 };
 </script>
@@ -43,25 +48,56 @@ export default {
     </div>
     <div class="center-entry">
       <div class="box">
-        <div class="ShowBorder" :class="{ active: Show1 }" @click="active1()">
+        <div class="ShowBorder" :class="{ active_: Show1 }" @click="active1()">
           <router-link
             :to="{ name: 'totalassessment' }"
-            :class="{ active: Show1 }"
-            >综合测评</router-link
+            custom
+            v-slot="{ navigate, isActive }"
+          >
+            <li
+              @click="navigate"
+              @keypress.enter="navigate"
+              :class="{ active: isActive }"
+              role="link"
+            >
+              <p :class="{ active_: Show1 }" @click="active1()">综合测评</p>
+            </li>
+          </router-link>
+        </div>
+      </div>
+      <div class="box">
+        <div class="ShowBorder" :class="{ active_: Show2 }" @click="active2()">
+          <router-link
+            :to="{ name: 'judgeaward' }"
+            custom
+            v-slot="{ navigate, isActive }"
+          >
+            <li
+              @click="navigate"
+              @keypress.enter="navigate"
+              :class="{ active: isActive }"
+              role="link"
+            >
+              <p :class="{ active_: Show2 }" @click="active2()">评奖评优</p>
+            </li></router-link
           >
         </div>
       </div>
       <div class="box">
-        <div class="ShowBorder" :class="{ active: Show2 }" @click="active2()">
-          <router-link :to="{ name: 'judgeaward' }" :class="{ active: Show2 }"
-            >评奖评优</router-link
+        <div class="ShowBorder" :class="{ active_: Show3 }" @click="active3()">
+          <router-link
+            :to="{ name: 'evaluation' }"
+            custom
+            v-slot="{ navigate, isActive }"
           >
-        </div>
-      </div>
-      <div class="box">
-        <div class="ShowBorder" :class="{ active: Show3 }" @click="active3()">
-          <router-link :to="{ name: 'evaluation' }" :class="{ active: Show3 }"
-            >评估公示</router-link
+            <li
+              @click="navigate"
+              @keypress.enter="navigate"
+              :class="{ active: isActive }"
+              role="link"
+            >
+              <p :class="{ active_: Show3 }" @click="active3()">评估公示</p>
+            </li></router-link
           >
         </div>
       </div>
@@ -83,10 +119,11 @@ export default {
 
 <style scoped>
 .Header {
+  box-sizing: border-box;
   position: relative;
   width: 100vw;
   height: 9.25vh;
-  background-color: rgba(245, 245, 245, 1);
+  background-color: rgba(255, 255, 255, 1);
   border-bottom: 0.1px solid rgba(112, 112, 112, 1);
 }
 .left-entry {
@@ -183,11 +220,12 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+  list-style-type: none;
 }
 .ShowBorder {
   position: relative;
   width: 100%;
-  height: 65%;
+  height: 100%;
   /* background-color: #98d4d8; */
   display: flex;
   align-items: center;
@@ -216,16 +254,19 @@ export default {
 .box :hover {
   color: black;
 }
-.box a {
-  display: block;
+
+.box div {
   color: rgba(128, 128, 128, 1);
   font-size: 16px;
   letter-spacing: 0px;
   text-decoration: none;
 }
+.box div p {
+  cursor: pointer;
+}
 /* 配置点击状态 */
-.active {
+.active_ {
   color: black;
-  /* background-color: #902727; */
+  background-color: #eee;
 }
 </style>

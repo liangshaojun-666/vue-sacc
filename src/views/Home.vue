@@ -1,10 +1,7 @@
 <template>
-  <HeadBar></HeadBar>
-  <!-- <router-link :to="{ name: 'totalassessment' }">综合测评</router-link>
-  <router-link :to="{ name: 'judgeaward' }">评奖评优</router-link>
-  <router-link :to="{ name: 'evaluation' }">测评公示</router-link>
-
-  <router-view></router-view> -->
+  <div class="container">
+    <HeadBar></HeadBar>
+  </div>
 </template>
 
 <script>
@@ -22,7 +19,17 @@ export default {
 
 
 <style scoped>
-a {
-  padding: 20px;
+.container {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(245, 245, 245, 0.8);
+  background-image: url(../assets/img/Web.png);
+  background-size: 100% 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  zoom: 1;
+  z-index: -10;
 }
 </style>
