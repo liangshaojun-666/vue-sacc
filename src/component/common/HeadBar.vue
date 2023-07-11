@@ -185,7 +185,7 @@ export default {
   width: 65%;
 }
 .name {
-  font-size: 16px;
+  font-size: 1.2vw;
   font-weight: 400;
   letter-spacing: 2px;
   line-height: 100%;
@@ -198,7 +198,7 @@ export default {
   line-height: 100%;
   border-radius: 2px;
   background-color: rgba(0, 43, 255, 1);
-  font-size: 8px;
+  font-size: 0.5vw;
   font-weight: 700;
   letter-spacing: 0px;
   color: rgba(255, 255, 255, 1);
@@ -257,7 +257,7 @@ export default {
 
 .box div {
   color: rgba(128, 128, 128, 1);
-  font-size: 16px;
+  font-size: 1.1vw;
   letter-spacing: 0px;
   text-decoration: none;
 }
@@ -267,6 +267,6 @@ export default {
 /* 配置点击状态 */
 .active_ {
   color: black;
-  background-color: #eee;
+  background-color: #f5f5f5;
 }
 </style>
