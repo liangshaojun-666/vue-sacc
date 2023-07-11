@@ -68,7 +68,7 @@ export default {
 }
 #year {
   padding: 1.5rem 0.55rem 1.5rem 9rem;
-  font-size: 24px;
+  font-size: 2vw;
   font-weight: 500;
   letter-spacing: 3px;
 }
