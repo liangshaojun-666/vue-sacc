@@ -19,6 +19,7 @@ const routes = [
     name: "Home",
     component: Home,
     children: [
+      //以下三个为导航栏中的子组件
       {
         //综合测评
         path: "totalassessment",
@@ -37,6 +38,28 @@ const routes = [
         name: "evaluation",
         component: () => import("../views/Evaluation.vue"),
       },
+      //导航栏到此结束
+
+      //以下三个为常用工具的三个子路由
+      {
+        //德育自我评价
+        path: "moraleducation",
+        name: "moraleducation",
+        component: () => import("../views/MoralEducation.vue"),
+      },
+      {
+        //能力分申报
+        path: "creditapplication",
+        name: "creditapplication",
+        component: () => import("../views/CreditApplication.vue"),
+      },
+      {
+        //学生手册
+        path: "",
+        name: "",
+        component: () => import("../views/Evaluation.vue"),
+      },
+      //常用工具到此结束
     ],
   },
   //懒加载代码段
