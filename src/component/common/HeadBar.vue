@@ -34,85 +34,99 @@
 
 <template>
   <!-- 这是共有的导航栏组件 -->
-  <div class="Header">
-    <div class="left-entry">
-      <div class="left-img">
-        <img src="../../assets/img/left-img.png" alt="" />
-      </div>
-      <div class="center-img">
-        <img src="../../assets/img/center-img.png" alt="" />
-      </div>
-      <div class="right-img">
-        <img src="../../assets/img/right-img.png" alt="" />
-      </div>
-    </div>
-    <div class="center-entry">
-      <div class="box">
-        <div class="ShowBorder" :class="{ active_: Show1 }" @click="active1()">
-          <router-link
-            :to="{ name: 'totalassessment' }"
-            custom
-            v-slot="{ navigate, isActive }"
-          >
-            <li
-              @click="navigate"
-              @keypress.enter="navigate"
-              :class="{ active: isActive }"
-              role="link"
-            >
-              <p :class="{ active_: Show1 }" @click="active1()">综合测评</p>
-            </li>
-          </router-link>
+  <div>
+    <div class="Header">
+      <div class="left-entry">
+        <div class="left-img">
+          <img src="../../assets/img/left-img.png" alt="" />
+        </div>
+        <div class="center-img">
+          <img src="../../assets/img/center-img.png" alt="" />
+        </div>
+        <div class="right-img">
+          <img src="../../assets/img/right-img.png" alt="" />
         </div>
       </div>
-      <div class="box">
-        <div class="ShowBorder" :class="{ active_: Show2 }" @click="active2()">
-          <router-link
-            :to="{ name: 'judgeaward' }"
-            custom
-            v-slot="{ navigate, isActive }"
+      <div class="center-entry">
+        <div class="box">
+          <div
+            class="ShowBorder"
+            :class="{ active_: Show1 }"
+            @click="active1()"
           >
-            <li
-              @click="navigate"
-              @keypress.enter="navigate"
-              :class="{ active: isActive }"
-              role="link"
+            <router-link
+              :to="{ name: 'totalassessment' }"
+              custom
+              v-slot="{ navigate, isActive }"
             >
-              <p :class="{ active_: Show2 }" @click="active2()">评奖评优</p>
-            </li></router-link
+              <li
+                @click="navigate"
+                @keypress.enter="navigate"
+                :class="{ active: isActive }"
+                role="link"
+              >
+                <p :class="{ active_: Show1 }" @click="active1()">综合测评</p>
+              </li>
+            </router-link>
+          </div>
+        </div>
+        <div class="box">
+          <div
+            class="ShowBorder"
+            :class="{ active_: Show2 }"
+            @click="active2()"
           >
+            <router-link
+              :to="{ name: 'judgeaward' }"
+              custom
+              v-slot="{ navigate, isActive }"
+            >
+              <li
+                @click="navigate"
+                @keypress.enter="navigate"
+                :class="{ active: isActive }"
+                role="link"
+              >
+                <p :class="{ active_: Show2 }" @click="active2()">评奖评优</p>
+              </li></router-link
+            >
+          </div>
+        </div>
+        <div class="box">
+          <div
+            class="ShowBorder"
+            :class="{ active_: Show3 }"
+            @click="active3()"
+          >
+            <router-link
+              :to="{ name: 'evaluation' }"
+              custom
+              v-slot="{ navigate, isActive }"
+            >
+              <li
+                @click="navigate"
+                @keypress.enter="navigate"
+                :class="{ active: isActive }"
+                role="link"
+              >
+                <p :class="{ active_: Show3 }" @click="active3()">评估公示</p>
+              </li>
+            </router-link>
+          </div>
         </div>
       </div>
-      <div class="box">
-        <div class="ShowBorder" :class="{ active_: Show3 }" @click="active3()">
-          <router-link
-            :to="{ name: 'evaluation' }"
-            custom
-            v-slot="{ navigate, isActive }"
-          >
-            <li
-              @click="navigate"
-              @keypress.enter="navigate"
-              :class="{ active: isActive }"
-              role="link"
-            >
-              <p :class="{ active_: Show3 }" @click="active3()">评估公示</p>
-            </li></router-link
-          >
+      <div class="right-entry">
+        <div class="profile">
+          <img src="../../assets/img/photo.png" alt="" />
+        </div>
+        <div class="PersonalData">
+          <div class="name">梁少峻</div>
+          <div class="number">B22042219</div>
         </div>
       </div>
     </div>
-    <div class="right-entry">
-      <div class="profile">
-        <img src="../../assets/img/photo.png" alt="" />
-      </div>
-      <div class="PersonalData">
-        <div class="name">梁少峻</div>
-        <div class="number">B22042219</div>
-      </div>
-    </div>
+    <router-view></router-view>
   </div>
-  <router-view></router-view>
 </template>
 
 <style scoped>
