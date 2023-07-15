@@ -92,8 +92,8 @@
           <img src="../../assets/img/photo.png" alt="" />
         </div>
         <div class="PersonalData">
-          <div class="name">辅导员</div>
-          <div class="number">工号</div>
+          <div class="name">陈龙</div>
+          <div class="number">辅导员</div>
         </div>
       </div>
     </div>

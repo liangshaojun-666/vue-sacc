@@ -22,11 +22,4 @@
   .CenterBox {
     margin: 0 auto;
   }
-
-  .div {
-    width: 100px;
-    border: 2px solid #eeeeee;
-    padding: 20px;
-    margin: 15px;
-  }
 </style>
