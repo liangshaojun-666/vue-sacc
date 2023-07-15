@@ -1,16 +1,17 @@
+//首页>>评奖评优
 <template>
   <div>
     <DatePicker></DatePicker>
-    <MoralBoard></MoralBoard>
+    <ApplicationScholarship></ApplicationScholarship>
   </div>
 </template>
 
 <script>
-  import MoralBoard from "../component/common/MoralBoard.vue";
-  import DatePicker from "../component/common/DatePicker.vue";
+  import ApplicationScholarship from "../../component/common/ApplicationScholarship.vue";
+  import DatePicker from "../../component/common/DatePicker.vue";
   export default {
     components: {
-      MoralBoard,
+      ApplicationScholarship,
       DatePicker,
     },
     data() {

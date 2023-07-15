@@ -1,7 +1,8 @@
 import { createRouter, createWebHistory } from "vue-router";
 
-import Home from "../views/Home.vue";
-import Login from "../views/Login.vue";
+import Home from "../views/Stu-page/Home.vue";
+import T_home from "../views/Teacher-page/T_home.vue";
+import Login from "../views/Stu-page/Login.vue";
 // import PageTwo from "../views/PageTwo.vue";
 
 const routes = [
@@ -24,19 +25,19 @@ const routes = [
         //综合测评
         path: "totalassessment",
         name: "totalassessment",
-        component: () => import("../views/TotalAssessment.vue"),
+        component: () => import("../views/Stu-page/TotalAssessment.vue"),
       },
       {
         //评奖评优
         path: "judgeaward",
         name: "judgeaward",
-        component: () => import("../views/JudgeAwards.vue"),
+        component: () => import("../views/Stu-page/JudgeAwards.vue"),
       },
       {
         //测评公示
         path: "evaluation",
         name: "evaluation",
-        component: () => import("../views/Evaluation.vue"),
+        component: () => import("../views/Stu-page/Evaluation.vue"),
       },
       //导航栏到此结束
 
@@ -45,21 +46,40 @@ const routes = [
         //德育自我评价
         path: "moraleducation",
         name: "moraleducation",
-        component: () => import("../views/MoralEducation.vue"),
+        component: () => import("../views/Stu-page/MoralEducation.vue"),
       },
       {
         //能力分申报
         path: "creditapplication",
         name: "creditapplication",
-        component: () => import("../views/CreditApplication.vue"),
+        component: () => import("../views/Stu-page/CreditApplication.vue"),
       },
       {
         //学生手册
         path: "",
         name: "",
-        component: () => import("../views/Evaluation.vue"),
+        component: () => import("../views/Stu-page/Evaluation.vue"),
       },
       //常用工具到此结束
+    ],
+  },
+
+  //教师端路由
+  {
+    path: "/t_home",
+    name: "T_home",
+    component: T_home,
+    children: [
+      {
+        path: "auditlist",
+        name: "auditlist",
+        component: () => import("../views/Teacher-page/AuditList.vue"),
+      },
+      {
+        path: "stulist",
+        name: "stulist",
+        component: () => import("../views/Teacher-page/StuList.vue"),
+      },
     ],
   },
   //懒加载代码段
