@@ -1,17 +1,17 @@
-//常用工具>>能力分申报
+//常用工具>>德育素质自我评价
 <template>
   <div>
     <DatePicker></DatePicker>
-    <CreditBoard></CreditBoard>
+    <MoralBoard></MoralBoard>
   </div>
 </template>
 
 <script>
-  import CreditBoard from "../component/common/CreditBoard.vue";
-  import DatePicker from "../component/common/DatePicker.vue";
+  import MoralBoard from "../../component/common/MoralBoard.vue";
+  import DatePicker from "../../component/common/DatePicker.vue";
   export default {
     components: {
-      CreditBoard,
+      MoralBoard,
       DatePicker,
     },
     data() {

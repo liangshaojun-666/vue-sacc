@@ -1,15 +1,17 @@
+//登录第一页
 <template>
   <div class="Container">
     <div class="box">
-      <img src="../assets/img/xueyuan.png" alt="" />
+      <img src="../../assets/img/xueyuan.png" alt="" />
     </div>
     <div class="title">
-      <img src="../assets/img/right-img.png" alt="" />
+      <img src="../../assets/img/right-img.png" alt="" />
     </div>
     <div class="mainBox">
       <input type="text" placeholder="输入学号" />
       <input type="password" name="" id="" placeholder="输入统一身份认证密码" />
-      <input type="submit" name="" placeholder="登录" @click="go" class="btn" />
+      <input type="submit" value="登录" @click="go" class="btn" />
+      <input type="submit" value="登录[教师]" @click="go_t" class="btn" />
       <!-- <button @click="go" class="btn">登录</button> -->
     </div>
   </div>
@@ -24,6 +26,9 @@
       go() {
         this.$router.push("/home/totalassessment");
       },
+      go_t() {
+        this.$router.push("/t_home/auditlist");
+      },
     },
   };
 </script>
@@ -32,7 +37,7 @@
   .Container {
     width: 100vw;
     height: 100vh;
-    background-image: url(../assets/img/login.png);
+    background-image: url(../../assets/img/login.png);
     background-size: 100% 100%;
     background-size: cover;
     background-repeat: no-repeat;
