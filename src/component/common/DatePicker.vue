@@ -58,18 +58,20 @@ export default {
 
 <style scoped>
 .DateSelector {
-  display: flex;
+  display: inline-block;
   align-items: center;
   box-sizing: border-box;
   height: 9.73vh;
 }
 .dateShow {
   text-align: center;
+  display: inline-block;
 }
 #year {
   padding: 1.5rem 0.55rem 1.5rem 9rem;
   font-size: 2vw;
   font-weight: 500;
   letter-spacing: 3px;
+  display: inline-block;
 }
 </style>
