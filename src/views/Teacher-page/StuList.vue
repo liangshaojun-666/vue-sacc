@@ -5,7 +5,14 @@
       <MajorPicker></MajorPicker>
       <StudentClassPicker></StudentClassPicker>
     111学生列表
-    <div class="whitelarge"></div>
+    <div class="whitelarge">
+      <div class="whs" id="whs1"></div>
+      <div class="whs" id="whs2"></div>
+      <div class="whs" id="whs3"></div>
+      <div class="whs" id="whs4"></div>
+      <div class="whs" id="whs5"></div>
+      <div class="whs" id="whs6"></div>
+    </div>
     </div>
   </div>
 </template>
@@ -52,5 +59,39 @@
     height: 81.02vh;
     opacity: 1;
     background: rgba(255, 255, 255, 0.8);
+  }
+  .whs{
+    position: absolute;
+    left: 3.82%;
+    width: 74.27vw;
+    height: 8.24vh;
+    opacity: 1;
+    border-radius: 0.73vw;
+    background: rgba(255, 255, 255, 1);
+    border: 0.03vw solid rgba(166, 166, 166, 1);
+  }
+  #whs1{
+    position: absolute;
+    top: 5.83%;
+  }
+  #whs2{
+    position: absolute;
+    top: 18.29%;
+  }
+  #whs3{
+    position: absolute;
+    top: 30.74%;
+  }
+  #whs4{
+    position: absolute;
+    top: 43.20%;
+  }
+  #whs5{
+    position: absolute;
+    top: 55.66%;
+  }
+  #whs6{
+    position: absolute;
+    top: 68.11%;
   }
 </style>
