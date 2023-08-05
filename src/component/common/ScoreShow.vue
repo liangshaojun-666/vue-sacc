@@ -55,7 +55,9 @@
           <img src="../../assets/img/blue.png" alt="" />
           历年综测成绩对比
         </div>
-        <div class="table"></div>
+        <div class="table">
+          <Echarts></Echarts>
+        </div>
       </div>
     </div>
     <div class="RightContainer">
@@ -78,12 +80,14 @@
 
 <script>
   import CommonTools from "./CommonTools.vue";
+  import Echarts from "./Echarts.vue";
   export default {
     data() {
       return {};
     },
     components: {
       CommonTools,
+      Echarts,
     },
   };
 </script>

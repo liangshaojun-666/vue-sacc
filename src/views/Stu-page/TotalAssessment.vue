@@ -1,7 +1,7 @@
 //首页>>综合测评
 <template>
   <div class="container">
-    <DatePicker></DatePicker>
+    <DatePicker @childEvent="parentFun"></DatePicker>
     <ScoreShow></ScoreShow>
   </div>
 </template>
@@ -9,10 +9,21 @@
 <script>
   import DatePicker from "../../component/common/DatePicker.vue";
   import ScoreShow from "../../component/common/ScoreShow.vue";
-
   export default {
+    methods: {
+      parentFun(years) {
+        this.arrData = years;
+      },
+      studentPage() {
+        studentPage(arrData.year - 1).then((res) => {
+          //内部做渲染数据工作
+        });
+      },
+    },
     data() {
-      return {};
+      return {
+        arrData: [],
+      };
     },
     components: {
       DatePicker,
