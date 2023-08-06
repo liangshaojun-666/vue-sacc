@@ -49,9 +49,12 @@
             <div :class="getStatusClass(item.state)">
               {{ statusText(item.state) }}
             </div>
-            <button v-if="item.state === 0" @click="deleteItem(item.id)">
-              撤销
-            </button>
+            <el-button
+              type="text"
+              v-if="item.state === 0"
+              @click="open(item.id)"
+              >撤销</el-button
+            >
           </div>
         </div>
       </div>
@@ -81,6 +84,29 @@
           this.msg = "请输入申请理由";
         }
       },
+      open(id) {
+        this.$confirm("此操作将永久删除该文件，是否继续?", "提示", {
+          confirmButtonText: "确定",
+          cancelButtonText: "取消",
+          type: "warning",
+        })
+          .then(() => {
+            this.$message({
+              type: "success",
+              message: "删除成功！",
+            });
+            const index = this.objects.findIndex((item) => item.id === id);
+            if (index !== -1) {
+              this.objects.splice(index, 1);
+            }
+          })
+          .catch(() => {
+            this.$message({
+              type: "info",
+              message: "已取消删除",
+            });
+          });
+      },
       getStatusClass(state) {
         switch (state) {
           case 0:
@@ -103,12 +129,6 @@
         } else {
           return "";
         }
-      },
-      deleteItem(id) {
-        // 在这里实现删除奖学金的操作
-        // 可以通过发送请求给后端删除对应的奖学金
-        // 删除成功后，可以更新objects数组，然后页面会自动重新渲染
-        this.objects.splice(id, 1);
       },
     },
 
@@ -155,25 +175,25 @@
           state: 1,
         },
         {
-          id: 1,
+          id: 5,
           awardName: "精神文明奖",
           awardLevel: "一等奖",
           awardMoney: 1000,
           state: 2,
         },
         {
-          id: 1,
+          id: 6,
           awardName: "精神文明奖",
           awardLevel: "一等奖",
           awardMoney: 1000,
           state: 0,
         },
         {
-          id: 1,
+          id: 7,
           awardName: "精神文明奖",
           awardLevel: "一等奖",
           awardMoney: 1000,
-          state: 0,
+          state: 2,
         },
       ];
     },

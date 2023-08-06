@@ -55,7 +55,7 @@
           <img src="../../assets/img/blue.png" alt="" />
           历年综测成绩对比
         </div>
-        <div class="table">
+        <div class="chart">
           <Echarts></Echarts>
         </div>
       </div>
@@ -124,11 +124,12 @@
     box-sizing: border-box;
     height: 40%;
   }
-  .table {
+  .chart {
     width: 89%;
-    height: 70%;
+    height: 77%;
     margin-left: 2rem;
-    margin-top: 1rem;
+    box-sizing: border-box;
+    margin-top: 0.5rem;
     box-shadow: 0px 0px 10px rgba(128, 128, 128, 0.16);
     border-radius: 14px;
   }
@@ -146,6 +147,7 @@
     align-items: center;
     color: rgba(0, 43, 255, 1);
     padding-top: 1rem;
+
     font-size: 2.2vh;
   }
   .BlueText img {
