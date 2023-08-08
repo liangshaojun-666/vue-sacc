@@ -16,7 +16,7 @@
       },
       studentPage() {
         studentPage(arrData.year - 1).then((res) => {
-          //内部做渲染数据工作
+          //部做渲染数据工作
         });
       },
     },
@@ -35,5 +35,16 @@
 <style scoped>
   .CenterBox {
     margin: 0 auto;
+  }
+  .container {
+    width: 100vw;
+    height: 90.75vh;
+    background-size: 100% 100%;
+    background-image: url(../../assets/img/mainBgImg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    overflow: hidden;
   }
 </style>

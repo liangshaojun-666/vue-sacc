@@ -29,7 +29,9 @@
       <div>上传附件</div>
       <div class="File">
         <p>单个文件最大10MB，最多上传10个文件，文件格式不限。</p>
-        <div class="fplace"></div>
+        <div class="fplace">
+          <input type="file" />
+        </div>
         <button class="btn">提交</button>
       </div>
     </div>
