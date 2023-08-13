@@ -8,15 +8,15 @@
       <div class="whitesmall" id="ws1">
         <img src="../../assets/img/blue.png" class="blue">
         <div class="textBlue" id="tb1">待审核列表</div>
-        <div class="whs" id="whs11"></div>
-        <div class="whs" id="whs12"></div>
+        <div class="whs" id="whs11"><div class="Intextblack">B22042219梁少峻的申请</div><div class="Intextblue">审核</div></div>
+        <div class="whs" id="whs12"><div class="Intextblack">B22042219梁少峻的申请</div><div class="Intextblue">审核</div></div>
       </div>
       <div class="whitesmall" id="ws2">
         <img src="../../assets/img/blue.png" class="blue">
         <div class="textBlue" id="tb2">已审核</div>
-        <div class="whs" id="whs21"></div>
-        <div class="whs" id="whs22"></div>
-        <div class="whs" id="whs23"></div>
+        <div class="whs" id="whs21"><div class="Intextblack">B22042219梁少峻的申请</div></div>
+        <div class="whs" id="whs22"><div class="Intextblack">B22042219梁少峻的申请</div></div>
+        <div class="whs" id="whs23"><div class="Intextblack">B22042219梁少峻的申请</div></div>
       </div>
     </div>
   </div>
@@ -128,5 +128,35 @@
   #whs23{
     position: absolute;
     top: 38.97%;
+  }
+  .Intextblue{
+    position: absolute;
+    left: 89.17%;
+    top: 35.71%;
+    width: 2vw;
+    height: 2.22vh;
+    opacity: 1;
+    font-size: 0.83vw;
+    font-weight: 400;
+    letter-spacing: 0px;
+    line-height: 2.15vh;
+    color: rgba(0, 43, 255, 1);
+    text-align: right;
+    vertical-align: top;
+  }
+  .Intextblack{
+    position: absolute;
+    left: 15.67%;
+    top: 35.71%;
+    width: 10.35vw;
+    height: 2.22vh;
+    opacity: 1;
+    font-size: 0.83vw;
+    font-weight: 700;
+    letter-spacing: 0px;
+    line-height: 2.15vh;
+    color: rgba(0, 0, 0, 1);
+    text-align: left;
+    vertical-align: top;
   }
 </style>
