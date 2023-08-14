@@ -56,7 +56,7 @@
             <el-button
               type="text"
               v-if="item.state === 0"
-              @click="open(item.itemID)"
+              @click.stop="open(item.itemID)"
               >撤销</el-button
             >
           </div>
@@ -380,10 +380,12 @@
     margin-left: 0;
   }
   .mark input {
-    width: 2vw;
-    height: 1.6vw;
+    width: 3vw;
+    height: 2vw;
     font-size: larger;
     text-align: center;
+    display: flex;
+    align-items: center; /* 垂直居中 */
     border: 0;
     background-color: rgba(245, 245, 245, 1);
     color: rgba(0, 43, 255, 1);

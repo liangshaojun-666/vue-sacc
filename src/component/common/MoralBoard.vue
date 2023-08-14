@@ -229,15 +229,20 @@
     display: flex;
     display: flex;
     justify-content: center;
+    align-items: center;
   }
   .mark h4 {
     font-weight: normal;
     margin-left: 0;
   }
   .mark input {
-    width: 2vw;
-    height: 1.6vw;
+    width: 3vw;
+    height: 2vw;
     font-size: larger;
     text-align: center;
+    border: 0;
+    background-color: rgba(245, 245, 245, 1);
+    display: flex;
+    align-items: center; /* 垂直居中 */
   }
 </style>

@@ -2,7 +2,8 @@
 <template>
   <div class="container">
     <DatePicker @childEvent="parentFun"></DatePicker>
-    <ScoreShow></ScoreShow>
+
+    <ScoreShow :arrData="arrData"></ScoreShow>
   </div>
 </template>
 
@@ -12,12 +13,7 @@
   export default {
     methods: {
       parentFun(years) {
-        this.arrData = years;
-      },
-      studentPage() {
-        studentPage(arrData.year - 1).then((res) => {
-          //部做渲染数据工作
-        });
+        this.arrData = years.year - 1;
       },
     },
     data() {

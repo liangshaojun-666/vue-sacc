@@ -11,7 +11,12 @@
           <div class="box">
             <div class="rankList">
               <img src="../../assets/img/logo1.png" alt="" class="logo" />
-              <div class="RankData orange">排名 1/191</div>
+              <div class="RankData orange">
+                <!-- 排名 {{ StuData.aggregateScoreRanking }}/{{
+                  StuData.totalStudent
+                }} -->
+                {{ StuData }}
+              </div>
             </div>
             <div class="dataContainer">
               <div class="title">学分<br />绩点</div>
@@ -86,14 +91,30 @@
   import CommonTools from "./CommonTools.vue";
   import Echarts from "./Echarts.vue";
   import TriChart from "./TriChart.vue";
+  import { studentPage } from "../../api/Student";
   export default {
+    props: ["arrData"],
+    //父组件传来的年份信息
     data() {
-      return {};
+      return { StuData: null };
     },
     components: {
       CommonTools,
       Echarts,
       TriChart,
+    },
+    methods: {
+      studentPage() {
+        studentPage(arrData)
+          .then((response) => {
+            // 处理返回的数据
+            this.StuData = response.data;
+          })
+          .catch((error) => {
+            // 处理错误
+            console.error(error);
+          });
+      },
     },
   };
 </script>
