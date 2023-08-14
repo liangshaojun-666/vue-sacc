@@ -4,19 +4,61 @@
       <DatePicker></DatePicker>
       <MajorPicker></MajorPicker>
       <StudentClassPicker></StudentClassPicker>
-      111审核列表
       <div class="whitesmall" id="ws1">
         <img src="../../assets/img/blue.png" class="blue">
         <div class="textBlue" id="tb1">待审核列表</div>
-        <div class="whs" id="whs11"><div class="Intextblack">B22042219梁少峻的申请</div><div class="Intextblue">审核</div></div>
-        <div class="whs" id="whs12"><div class="Intextblack">B22042219梁少峻的申请</div><div class="Intextblue">审核</div></div>
+        <div class="whs" id="whs11">
+          <div class="blue_rec">
+            <div class="textwh_long">奖学金</div>
+          </div>
+          <div class="Intextblack">B22042219梁少峻的申请</div>
+          <div class="Intextblue">审核</div>
+        </div>
+        <div class="whs" id="whs12">
+          <div class="blue_rec">
+            <div class="textwh_long">能力分</div>
+          </div>
+          <div class="Intextblack">B22042219梁少峻的申请</div>
+          <div class="Intextblue">审核</div>
+        </div>
+        <div class="whs" id="whs13">
+          <div class="blue_rec">
+            <div class="textwh_long">德育</div>
+          </div>
+          <div class="Intextblack">B22042219梁少峻的申请</div>
+          <router-link to="./moralevaluation"><div class="Intextblue">审核</div></router-link>
+        </div>
       </div>
       <div class="whitesmall" id="ws2">
         <img src="../../assets/img/blue.png" class="blue">
         <div class="textBlue" id="tb2">已审核</div>
-        <div class="whs" id="whs21"><div class="Intextblack">B22042219梁少峻的申请</div></div>
-        <div class="whs" id="whs22"><div class="Intextblack">B22042219梁少峻的申请</div></div>
-        <div class="whs" id="whs23"><div class="Intextblack">B22042219梁少峻的申请</div></div>
+        <div class="whs" id="whs21">
+          <div class="blue_rec">
+            <div class="textwh_long">奖学金</div>
+          </div>
+          <div class="Intextblack">B22042219梁少峻的申请</div>
+          <div id="textred">审核不通过</div>
+          <img src="../../assets/img/way1.png" class="way1">
+          <img src="../../assets/img/way2.png" class="way2">
+        </div>
+        <div class="whs" id="whs22">
+          <div class="blue_rec">
+            <div class="textwh_long">能力分</div>
+          </div>
+          <div class="Intextblack">B22042219梁少峻的申请</div>
+          <div id="textgreen">审核通过</div>
+          <img src="../../assets/img/way1.png" class="way1">
+          <img src="../../assets/img/way2.png" class="way2">
+        </div>
+        <div class="whs" id="whs23">
+          <div class="blue_rec">
+            <div class="textwh_long">德育</div>
+          </div>
+          <div class="Intextblack">B22042219梁少峻的申请</div>
+          <div id="text_blue">已打分</div>
+          <img src="../../assets/img/way1.png" class="way1">
+          <img src="../../assets/img/way2.png" class="way2">
+        </div>
       </div>
     </div>
   </div>
@@ -117,6 +159,10 @@
     position: absolute;
     top: 26.51%;
   }
+  #whs13{
+    position: absolute;
+    top: 38.97%;
+  }
   #whs21{
     position: absolute;
     top: 14.06%;
@@ -157,6 +203,90 @@
     line-height: 2.15vh;
     color: rgba(0, 0, 0, 1);
     text-align: left;
+    vertical-align: top;
+  }
+  .way1{
+    position: absolute;
+    left: 92.68%;
+    top: 42.86%;
+    width: 0.625vw;
+    height: 1.11vh;
+  }
+  .way2{
+    position: absolute;
+    left: 94.00%;
+    top: 43.65%;
+    width: 0.15625vw;
+    height: 0.278vh;
+  }
+  #textred{
+    position: absolute;
+    left: 75.11%;
+    top: 35.71%;
+    width: 4.5vw;
+    height: 2.22vh;
+    opacity: 1;
+    font-size: 0.83vw;
+    font-weight: 400;
+    letter-spacing: 0px;
+    line-height: 2.15vh;
+    color: rgba(255, 87, 51, 1);
+    text-align: right;
+    vertical-align: top;
+  }
+  #textgreen{
+    position: absolute;
+    left: 77.45%;
+    top: 35.71%;
+    width: 3.5vw;
+    height: 2.22vh;
+    opacity: 1;
+    font-size: 0.83vw;
+    font-weight: 400;
+    letter-spacing: 0px;
+    line-height: 2.15vh;
+    color: rgba(67, 207, 124, 1);
+    text-align: right;
+    vertical-align: top;
+  }
+  #text_blue{
+    position: absolute;
+    left: 79.795%;
+    top: 35.71%;
+    width: 3vw;
+    height: 2.22vh;
+    opacity: 1;
+    font-size: 0.83vw;
+    font-weight: 400;
+    letter-spacing: 0px;
+    line-height: 2.15vh;
+    color: rgba(0, 43, 255, 1);
+    text-align: right;
+    vertical-align: top;
+  }
+  .blue_rec{
+    position: absolute;
+    left: 3.81%;
+    top: 38.095%;
+    width: 2.5vw;
+    height: 1.94vh;
+    opacity: 1;
+    border-radius: 0.15625vw;
+    background: rgba(0, 43, 255, 1);
+  }
+  .textwh_long{
+    position: absolute;
+    left: 2%;
+    top: 4.76%;
+    width: 2.6vw;
+    height: 1.67vh;
+    opacity: 1;
+    font-size: 0.625vw;
+    font-weight: 400;
+    letter-spacing: 0px;
+    line-height: 1.61vh;
+    color: rgba(255, 255, 255, 1);
+    text-align: center;
     vertical-align: top;
   }
 </style>

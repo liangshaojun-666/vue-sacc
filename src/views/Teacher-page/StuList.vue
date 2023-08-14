@@ -4,14 +4,37 @@
       <DatePicker></DatePicker>
       <MajorPicker></MajorPicker>
       <StudentClassPicker></StudentClassPicker>
-    111学生列表
     <div class="whitelarge">
-      <div class="whs" id="whs1"></div>
-      <div class="whs" id="whs2"></div>
-      <div class="whs" id="whs3"></div>
-      <div class="whs" id="whs4"></div>
-      <div class="whs" id="whs5"></div>
-      <div class="whs" id="whs6"></div>
+      <div class="whs" id="whs1">
+        <img src="../../assets/img/photo.png" class="photo">
+        <div class="textblack">B22042219梁少峻</div>
+        <router-link to="./applicationcheck"><div class="textblue">查看他的申请</div></router-link>
+      </div>
+      <div class="whs" id="whs2">
+        <img src="../../assets/img/photo.png" class="photo">
+        <div class="textblack">B22042219梁少峻</div>
+        <router-link to="./applicationcheck"><div class="textblue">查看他的申请</div></router-link>
+      </div>
+      <div class="whs" id="whs3">
+        <img src="../../assets/img/photo.png" class="photo">
+        <div class="textblack">B22042219梁少峻</div>
+        <router-link to="./applicationcheck"><div class="textblue">查看他的申请</div></router-link>
+      </div>
+      <div class="whs" id="whs4">
+        <img src="../../assets/img/photo.png" class="photo">
+        <div class="textblack">B22042219梁少峻</div>
+        <router-link to="./applicationcheck"><div class="textblue">查看他的申请</div></router-link>
+      </div>
+      <div class="whs" id="whs5">
+        <img src="../../assets/img/photo.png" class="photo">
+        <div class="textblack">B22042219梁少峻</div>
+        <router-link to="./applicationcheck"><div class="textblue">查看他的申请</div></router-link>
+      </div>
+      <div class="whs" id="whs6">
+        <img src="../../assets/img/photo.png" class="photo">
+        <div class="textblack">B22042219梁少峻</div>
+        <router-link to="./applicationcheck"><div class="textblue">查看他的申请</div></router-link>
+      </div>
     </div>
     </div>
   </div>
@@ -93,5 +116,42 @@
   #whs6{
     position: absolute;
     top: 68.11%;
+  }
+  .photo{
+    position: absolute;
+    left: 2.52%;
+    top: 30.95%;
+    width: 1.67vw;
+    height: 2.96vh;
+  }
+  .textblack{
+    position: absolute;
+    left: 6.45%;
+    top: 34.52%;
+    width: 8vw;
+    height: 2.22vh;
+    opacity: 1;
+    font-size: 0.83vw;
+    font-weight: 700;
+    letter-spacing: 0px;
+    line-height: 2.15vh;
+    color: rgba(0, 0, 0, 1);
+    text-align: left;
+    vertical-align: top;
+  }
+  .textblue{
+    position: absolute;
+    left: 90.11%;
+    top: 35.71%;
+    width: 6vw;
+    height: 2.22vh;
+    opacity: 1;
+    font-size: 0.83vw;
+    font-weight: 400;
+    letter-spacing: 0px;
+    line-height: 2.15vh;
+    color: rgba(0, 43, 255, 1);
+    text-align: right;
+    vertical-align: top;
   }
 </style>

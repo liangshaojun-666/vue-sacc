@@ -80,6 +80,16 @@ const routes = [
         name: "stulist",
         component: () => import("../views/Teacher-page/StuList.vue"),
       },
+      {
+        path: "applicationcheck",
+        name: "applicationcheck",
+        component: () => import("../views/Teacher-page/ApplicationCheck.vue"),
+      },
+      {
+        path: "moralevaluation",
+        name: "moralevaluation",
+        component: () => import("../views/Teacher-page/MoralEvaluation.vue"),
+      },
     ],
   },
   //懒加载代码段
