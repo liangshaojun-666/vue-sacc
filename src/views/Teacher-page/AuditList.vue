@@ -12,14 +12,14 @@
             <div class="textwh_long">奖学金</div>
           </div>
           <div class="Intextblack">B22042219梁少峻的申请</div>
-          <div class="Intextblue">审核</div>
+          <router-link to="awardjudge"><div class="Intextblue">审核</div></router-link>
         </div>
         <div class="whs" id="whs12">
           <div class="blue_rec">
             <div class="textwh_long">能力分</div>
           </div>
           <div class="Intextblack">B22042219梁少峻的申请</div>
-          <div class="Intextblue">审核</div>
+          <router-link to="./abilityjudge"><div class="Intextblue">审核</div></router-link>
         </div>
         <div class="whs" id="whs13">
           <div class="blue_rec">

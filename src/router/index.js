@@ -90,6 +90,16 @@ const routes = [
         name: "moralevaluation",
         component: () => import("../views/Teacher-page/MoralEvaluation.vue"),
       },
+      {
+        path: "abilityjudge",
+        name: "abilityjudge",
+        component: () => import("../views/Teacher-page/AbilityJudge.vue"),
+      },
+      {
+        path: "awardjudge",
+        name: "awardjudge",
+        component: () => import("../views/Teacher-page/AwardJudge.vue"),
+      }
     ],
   },
   //懒加载代码段
