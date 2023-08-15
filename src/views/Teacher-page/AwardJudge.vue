@@ -20,7 +20,9 @@
             <div class="num" id="n4">88</div>
           </div>
           <div class="item" id="i1">奖项名称</div>
+          <div class="inblue" id="ib1">精神文明奖</div>
           <div class="item" id="i2">等级</div>
+          <div class="inblue" id="ib2">无等级</div>
           <div class="item" id="i3">申请理由</div>
           <div class="grey_rec">
             <div class="innertext">用户分享内容到社交媒体或好友，不应该是一种粗暴的强制行为，我们应该在保证产品本身内容有吸引力的核心前提下，仔细揣摩用户心理，结合产品本身的特色，在不同情境下提供给用户最合适的分享平台及方式，让用户分享成为一种水到渠成的自然行为，甚至在某些时候还能给用户带来一...</div>
@@ -324,5 +326,28 @@
     position: absolute;
     left: 66.47%;
     top: 54.22%;
+  }
+  .inblue{
+    position: absolute;
+    right: 12.29%;
+    height: 2.5vh;
+    opacity: 1;
+    font-size: 1.04vw;
+    font-weight: 500;
+    letter-spacing: 0px;
+    line-height: 2.44vh;
+    color: rgba(0, 43, 255, 1);
+    text-align: right;
+    vertical-align: top;
+  }
+  #ib1{
+    position: absolute;
+    top: 28%;
+    width: 5.21vw;
+  }
+  #ib2{
+    position: absolute;
+    top: 34.91%;
+    width: 3.125vw;
   }
   </style>

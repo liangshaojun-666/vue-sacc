@@ -10,7 +10,9 @@
         <img src="../../assets/img/blue.png" class="blue">
         <div class="title">已申报项目详情</div>
         <div class="item" id="i1">类型</div>
+        <div class="inblue" id="ib1">学术科技成果（含论文报告）</div>
         <div class="item" id="i2">分数</div>
+        <div class="inblue" id="ib2">15</div>
         <div class="item" id="i3">具体描述</div>
         <div class="grey_rec">
             <div class="innertext">用户分享内容到社交媒体或好友，不应该是一种粗暴的强制行为，我们应该在保证产品本身内容有吸引力的核心前提下，仔细揣摩用户心理，结合产品本身的特色，在不同情境下提供给用户最合适的分享平台及方式，让用户分享成为一种水到渠成的自然行为，甚至在某些时候还能给用户带来一...</div>
@@ -240,5 +242,28 @@
     color: rgba(255, 255, 255, 1);
     text-align: center;
     vertical-align: top;
+  }
+  .inblue{
+    position: absolute;
+    right: 12.29%;
+    height: 2.5vh;
+    opacity: 1;
+    font-size: 1.04vw;
+    font-weight: 500;
+    letter-spacing: 0px;
+    line-height: 2.44vh;
+    color: rgba(0, 43, 255, 1);
+    text-align: right;
+    vertical-align: top;
+  }
+  #ib1{
+    position: absolute;
+    top: 16.8%;
+    width: 13.54vw;
+  }
+  #ib2{
+    position: absolute;
+    top: 23.71%;
+    width: 1.15vw;
   }
 </style>
