@@ -1,5 +1,5 @@
 <template>
-    <div class="CentetBox">
+    <div class="CenterqBox">
       <div>
         <div class="above">B22042219梁少峻的奖学金申请</div>
         <div class="whitecenter">

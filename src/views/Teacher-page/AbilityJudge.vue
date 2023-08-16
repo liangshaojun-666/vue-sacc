@@ -1,5 +1,5 @@
 <template>
-  <div class="CentetBox">
+  <div class="CenterBox">
     <div>
       <div class="above">B22042219梁少峻的能力分申报</div>
       <div class="whitecenter">
