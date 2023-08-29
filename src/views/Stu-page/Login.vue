@@ -8,27 +8,64 @@
       <img src="../../assets/img/right-img.png" alt="" />
     </div>
     <div class="mainBox">
-      <input type="text" placeholder="输入学号" />
-      <input type="password" name="" id="" placeholder="输入统一身份认证密码" />
-      <input type="submit" value="登录" @click="go" class="btn" />
-      <input type="submit" value="登录[教师]" @click="go_t" class="btn" />
-      <!-- <button @click="go" class="btn">登录</button> -->
+      <input type="text" placeholder="输入学号/工号" v-model="username" />
+      <!-- <p>{{ username }}</p> -->
+      <input
+        type="password"
+        placeholder="输入统一身份认证密码"
+        v-model="password"
+      />
+      <!-- <input type="button" value="登录" @click="login" class="btn" /> -->
+
+      <button @click="go" class="btn">登录</button>
     </div>
   </div>
 </template>
 
 <script>
+  import { login } from "../../api/Student.js";
+
   export default {
     data() {
-      return {};
+      return {
+        username: "",
+        password: "",
+        StuParams: {
+          username: "",
+          password: "",
+        },
+      };
     },
     methods: {
       go() {
         this.$router.push("/home/totalassessment");
       },
-      go_t() {
-        this.$router.push("/t_home/auditlist");
+
+      //还未绑定按钮
+      login() {
+        login(this.StuParams)
+          .then((res) => {
+            if (res.data.success == true) {
+              if (res.data.role == 0) {
+                this.$router.push("/home/totalassessment");
+                //判断用户身份，0时跳转学生端
+              } else {
+                this.$router.push("/t_home/auditlist");
+                //1时跳转教师端
+              }
+            } else {
+              alert("登陆失败！！请检查学号或密码");
+            }
+          })
+          .catch((err) => {
+            console.log(err);
+          });
       },
+    },
+    beforeMount() {
+      this.StuParams.username = this.username;
+      this.StuParams.password = this.password;
+      this.login();
     },
   };
 </script>
@@ -59,6 +96,7 @@
     border: 0;
     transition: 0.2s;
     cursor: pointer;
+    margin-top: 2rem;
   }
   .btn:hover {
     width: 9rem;

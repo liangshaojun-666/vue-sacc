@@ -1,12 +1,13 @@
 <template>
   <div class="container">
     <DatePicker></DatePicker>
-    111学生列表
+    <T_StulistBoard></T_StulistBoard>
   </div>
 </template>
 
 <script>
   import DatePicker from "../../component/common/DatePicker.vue";
+  import T_StulistBoard from "../../component/T_common/T_StulistBoard.vue";
 
   export default {
     data() {
@@ -14,6 +15,7 @@
     },
     components: {
       DatePicker,
+      T_StulistBoard,
     },
   };
 </script>

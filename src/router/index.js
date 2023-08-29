@@ -17,7 +17,6 @@ const routes = [
   //评奖评优和测评公示为子路由
   {
     path: "/home",
-    name: "Home",
     component: Home,
     children: [
       //以下三个为导航栏中的子组件
@@ -67,7 +66,6 @@ const routes = [
   //教师端路由
   {
     path: "/t_home",
-    name: "T_home",
     component: T_home,
     children: [
       {

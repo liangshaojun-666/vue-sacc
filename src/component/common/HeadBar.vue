@@ -6,6 +6,33 @@
 
   export default {
     methods: {
+      showLogoutConfirmation() {
+        // 使用 Element UI 的 MessageBox 组件来显示确认提示
+        this.$confirm("确定要退出登录吗？", "退出登录", {
+          confirmButtonText: "确定",
+          cancelButtonText: "取消",
+          type: "warning",
+          customClass: "logout-message-box", // 添加自定义样式类名
+          customTop: "20vh", // 自定义距离顶部的高度
+        })
+          .then(() => {
+            // 用户点击了"确定"按钮，执行退出登录操作
+            this.logout();
+          })
+          .catch(() => {
+            // 用户点击了"取消"按钮，不执行任何操作
+          });
+      },
+      showPopupOnMouseEnter() {
+        this.showPopup = true;
+      },
+      hidePopupOnMouseLeave() {
+        this.showPopup = false;
+      },
+      logout() {
+        // 在这里处理退出登录逻辑
+        this.$router.push("/");
+      },
       active1() {
         this.Show1 = true;
         this.Show2 = false;
@@ -27,6 +54,7 @@
         Show1: true,
         Show2: false,
         Show3: false,
+        showPopup: false,
       };
     },
   };
@@ -116,8 +144,15 @@
         </div>
       </div>
       <div class="right-entry">
-        <div class="profile">
+        <div
+          class="profile"
+          @mouseenter="showPopupOnMouseEnter"
+          @mouseleave="hidePopupOnMouseLeave"
+        >
           <img src="../../assets/img/photo.png" alt="" />
+          <div class="popup" v-if="showPopup">
+            <button @click="showLogoutConfirmation">退出登录</button>
+          </div>
         </div>
         <div class="PersonalData">
           <div class="name">梁少峻</div>
@@ -130,6 +165,9 @@
 </template>
 
 <style scoped>
+  .logout-message-box {
+    top: 20vh; /* 设置弹出框距离顶部的高度 */
+  }
   .Header {
     box-sizing: border-box;
     position: relative;
@@ -189,12 +227,54 @@
   }
   .profile {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
   }
   .profile img {
     height: 65%;
     width: 65%;
+  }
+  .profile {
+    position: relative;
+    display: inline-block;
+  }
+
+  .popup {
+    position: absolute;
+    top: 100%; /* 悬浮框在图片下方 */
+    left: 0;
+    display: none;
+    background-color: white;
+    padding: 8px 12px;
+    margin-left: -20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .popup::before {
+    content: "";
+    position: absolute;
+    top: -10px; /* 调整三角形的位置 */
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 0 10px 10px;
+    border-style: solid;
+    border-color: transparent transparent #ffffff transparent;
+  }
+  .popup button {
+    background-color: #fff;
+    border: #ccc;
+    font-size: 0.9rem;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    color: rgba(255, 87, 51, 1);
+  }
+  .profile:hover .popup {
+    display: block;
   }
   .name {
     font-size: 1.2vw;
@@ -280,5 +360,8 @@
   .active_ {
     color: black;
     background-color: #f5f5f5;
+  }
+  .logout-message-box {
+    top: 10vh; /* 设置弹出框距离顶部的高度 */
   }
 </style>

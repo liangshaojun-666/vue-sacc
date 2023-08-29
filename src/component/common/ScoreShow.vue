@@ -11,7 +11,12 @@
           <div class="box">
             <div class="rankList">
               <img src="../../assets/img/logo1.png" alt="" class="logo" />
-              <div class="RankData orange">排名 1/191</div>
+              <div class="RankData orange">
+                <!-- 排名 {{ StuData.aggregateScoreRanking }}/{{
+                  StuData.totalStudent
+                }} -->
+                {{ StuData }}
+              </div>
             </div>
             <div class="dataContainer">
               <div class="title">学分<br />绩点</div>
@@ -55,7 +60,9 @@
           <img src="../../assets/img/blue.png" alt="" />
           历年综测成绩对比
         </div>
-        <div class="table"></div>
+        <div class="chart">
+          <Echarts></Echarts>
+        </div>
       </div>
     </div>
     <div class="RightContainer">
@@ -71,6 +78,10 @@
           <img src="../../assets/img/blue.png" alt="" />
           个人各项能力对比
         </div>
+        <div class="chart3">
+          <div class="Tri_chart"><TriChart></TriChart></div>
+          <div class="advice"></div>
+        </div>
       </div>
     </div>
   </div>
@@ -78,12 +89,32 @@
 
 <script>
   import CommonTools from "./CommonTools.vue";
+  import Echarts from "./Echarts.vue";
+  import TriChart from "./TriChart.vue";
+  import { studentPage } from "../../api/Student";
   export default {
+    props: ["arrData"],
+    //父组件传来的年份信息
     data() {
-      return {};
+      return { StuData: null };
     },
     components: {
       CommonTools,
+      Echarts,
+      TriChart,
+    },
+    methods: {
+      studentPage() {
+        studentPage(arrData)
+          .then((response) => {
+            // 处理返回的数据
+            this.StuData = response.data;
+          })
+          .catch((error) => {
+            // 处理错误
+            console.error(error);
+          });
+      },
     },
   };
 </script>
@@ -109,6 +140,9 @@
     /* background-color: #e3c5c5; */
     box-sizing: border-box;
   }
+  .RightBottom {
+    height: 58%;
+  }
   .LeftTop {
     box-sizing: border-box;
     height: 60%;
@@ -120,13 +154,37 @@
     box-sizing: border-box;
     height: 40%;
   }
-  .table {
+  .chart {
     width: 89%;
-    height: 70%;
+    height: 77%;
     margin-left: 2rem;
-    margin-top: 1rem;
+    box-sizing: border-box;
+    margin-top: 0.5rem;
     box-shadow: 0px 0px 10px rgba(128, 128, 128, 0.16);
     border-radius: 14px;
+  }
+  .chart3 {
+    width: 80%;
+    height: 99.5%;
+    box-sizing: border-box;
+    margin-top: 0.5rem;
+    box-shadow: 0px 0px 10px rgba(128, 128, 128, 0.16);
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+  }
+  .Tri_chart {
+    width: 88%;
+    height: 70%;
+  }
+  .advice {
+    width: 92%;
+    height: 30%;
+    border-radius: 1rem;
+    background: rgba(41, 100, 227, 0.06);
+    margin-bottom: 0.5rem;
   }
   .BlueText {
     height: 1.25em;
@@ -142,6 +200,7 @@
     align-items: center;
     color: rgba(0, 43, 255, 1);
     padding-top: 1rem;
+
     font-size: 2.2vh;
   }
   .BlueText img {

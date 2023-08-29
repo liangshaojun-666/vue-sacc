@@ -1,0 +1,28 @@
+{
+  "success": true,
+  "errCode": null,
+  "errMsg": null,
+  "data": {
+    "aggregateScore": 90.0,
+    "gradePoint": 4.0,
+    "moralQuality": 85,
+    "historyAggregateScore": [
+      {
+        "aggregateScore": 90.0,
+        "year": 2022
+      },
+      {
+        "aggregateScore": 70.0,
+        "year": 2023
+      }
+    ],
+    "stuID": "B22041601",
+    "totalStudent": 1,
+    "aggregateScoreRanking": 1,
+    "stuClass": "B220416",
+    "abilityScore": 20.0,
+    "stuName": "stu1",
+    "gradePointRanking": 1,
+    "PEScore": 80.0
+  }
+}
