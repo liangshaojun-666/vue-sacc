@@ -5,10 +5,8 @@ import WebConfig from "./global.config";
 import router from "./router/index.js";
 //后面的请求用request来发
 let request = axios.create({
-  baseURL: "'http://47.113.218.236:6666'",
-  timeout: 30 * 1000,
-  responseType: "json",
-  headers: {},
+  baseURL: "http://47.113.218.236:8082",
+  timeout: 1000,
 });
 
 //请求拦截器

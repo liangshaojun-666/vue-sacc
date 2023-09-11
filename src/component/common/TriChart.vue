@@ -64,6 +64,10 @@
     width: 100%; /* 设置宽度以充满父容器 */
     height: 100%; /* 设置高度以充满父容器 */
   }
+  .echarts-box .ec-name div {
+    display: flex;
+    flex-wrap: wrap; /* 添加此行来自动换行 */
+  }
 </style>
 
 <style scoped>

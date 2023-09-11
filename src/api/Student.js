@@ -5,7 +5,7 @@ import { request } from "./request";
 export const login = (data) => {
   return request({
     url: "/login",
-    methods: "post",
+    method: "POST",
     data,
   });
 };
@@ -32,7 +32,7 @@ export function logout() {
 export const studentPage = (year) => {
   return request({
     url: "/student/{year}",
-    methods: "GET",
+    method: "GET",
     params: { year: year },
   });
 };
@@ -41,7 +41,7 @@ export const studentPage = (year) => {
 export const getMoral = (year) => {
   return request({
     url: "/student/moral_quality_score/{year}",
-    methods: "GET",
+    method: "GET",
     params: { year: year },
   });
 };
@@ -49,7 +49,7 @@ export const getMoral = (year) => {
 export const getCredit = (year) => {
   return request({
     url: "/student/item/{year}",
-    methods: "GET",
+    method: "GET",
     params: { year: year },
   });
 };
@@ -58,7 +58,15 @@ export const getCredit = (year) => {
 export const getAward = (year) => {
   return request({
     url: "/student/award/{year}",
-    methods: "GET",
+    method: "GET",
     params: { year: year },
+  });
+};
+
+//7)获取公钥接口
+export const getpubKey = () => {
+  return request({
+    url: "/get_public_key",
+    method: "get",
   });
 };
