@@ -1,4 +1,4 @@
-//测评公式中间板
+// 测评公式中间板
 
 <template>
   <div class="CenterBox">

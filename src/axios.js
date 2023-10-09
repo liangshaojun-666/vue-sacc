@@ -5,10 +5,8 @@ import WebConfig from "./global.config";
 import router from "./router/index.js";
 //后面的请求用request来发
 let request = axios.create({
-  baseURL: "'http://47.113.218.236:6666'",
-  timeout: 30 * 1000,
-  responseType: "json",
-  headers: {},
+  baseURL: "http://47.113.218.236:8082",
+  timeout: 1000,
 });
 
 //请求拦截器
@@ -24,7 +22,7 @@ request.interceptors.request.use(
     ///////
     //如果该url不在api白名单里，并且你已经登录了，就向请求头里存一下token.
     if (whiteList.indexOf(url) === -1 && token) {
-      config.headers.token = token;
+      config.headers.TOKEN = token;
     }
     return config;
   },

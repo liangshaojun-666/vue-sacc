@@ -5,7 +5,7 @@ import { request } from "./request";
 export const login = (data) => {
   return request({
     url: "/login",
-    methods: "post",
+    method: "POST",
     data,
   });
 };
@@ -28,12 +28,10 @@ export function logout() {
 }
 
 // 3）主页
-// import Todata from "../views/Stu-page/TotalAssessment.vue";
 export const studentPage = (year) => {
   return request({
-    url: "/student/{year}",
-    methods: "GET",
-    params: { year: year },
+    url: `/student/${year}`,
+    method: "GET",
   });
 };
 
@@ -41,15 +39,14 @@ export const studentPage = (year) => {
 export const getMoral = (year) => {
   return request({
     url: "/student/moral_quality_score/{year}",
-    methods: "GET",
-    params: { year: year },
+    method: "GET",
   });
 };
 //5)获取能力分申报
 export const getCredit = (year) => {
   return request({
     url: "/student/item/{year}",
-    methods: "GET",
+    method: "GET",
     params: { year: year },
   });
 };
@@ -58,7 +55,15 @@ export const getCredit = (year) => {
 export const getAward = (year) => {
   return request({
     url: "/student/award/{year}",
-    methods: "GET",
+    method: "GET",
     params: { year: year },
+  });
+};
+
+//7)获取公钥接口
+export const getpubKey = () => {
+  return request({
+    url: "/get_public_key",
+    method: "get",
   });
 };

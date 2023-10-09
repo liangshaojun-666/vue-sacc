@@ -1,77 +1,84 @@
-//登录第一页
 <template>
-  <div class="Container">
-    <div class="box">
-      <img src="../../assets/img/xueyuan.png" alt="" />
+    <div class="Container">
+        <div class="box">
+            <img src="../../assets/img/xueyuan.png" alt="" />
+        </div>
+        <div class="title">
+            <img src="../../assets/img/right-img.png" alt="" />
+        </div>
+        <div class="mainBox">
+            <input type="text" placeholder="输入学号/工号" v-model="StuParams.id" />
+            <input type="password" placeholder="输入统一身份认证密码" v-model="StuParams.plainPassword" />
+            <button class="btn" @click="login">登录</button>
+            <!-- <button class="btn" @click="go">fake登录</button> -->
+        </div>
     </div>
-    <div class="title">
-      <img src="../../assets/img/right-img.png" alt="" />
-    </div>
-    <div class="mainBox">
-      <input type="text" placeholder="输入学号/工号" v-model="username" />
-      <!-- <p>{{ username }}</p> -->
-      <input
-        type="password"
-        placeholder="输入统一身份认证密码"
-        v-model="password"
-      />
-      <!-- <input type="button" value="登录" @click="login" class="btn" /> -->
-
-      <button @click="go" class="btn">登录</button>
-    </div>
-  </div>
 </template>
 
 <script>
-  import { login } from "../../api/Student.js";
+import Rsa from "../../../src/utils/rsa"
+import rsaPublicData from "../../../src/utils/rsa"
+import { login, getpubKey } from "../../api/Student.js"
+export default {
+    data () {
+        return {
+            StuParams: {
+                id: "",
+                password: "",
+                plainPassword: "",
+            },
 
-  export default {
-    data() {
-      return {
-        username: "",
-        password: "",
-        StuParams: {
-          username: "",
-          password: "",
-        },
-      };
+        }
     },
     methods: {
-      go() {
-        this.$router.push("/home/totalassessment");
-      },
 
-      //还未绑定按钮
-      login() {
-        login(this.StuParams)
-          .then((res) => {
-            if (res.data.success == true) {
-              if (res.data.role == 0) {
-                this.$router.push("/home/totalassessment");
-                //判断用户身份，0时跳转学生端
-              } else {
-                this.$router.push("/t_home/auditlist");
-                //1时跳转教师端
-              }
-            } else {
-              alert("登陆失败！！请检查学号或密码");
-            }
-          })
-          .catch((err) => {
-            console.log(err);
-          });
-      },
+        go () {
+            this.$router.push("/home/totalassessment")
+        },
+
+        login () {
+            getpubKey()
+                .then((response) => {
+                    // console.log(response.data.data.publicKey)
+
+
+                    let publicKey = response.data.data.publicKey
+                    const encryptedPassword = rsaPublicData(publicKey, this.$data.StuParams.plainPassword)
+                    // console.log(encryptedPassword)
+                    let postdata = {
+                        id: this.$data.StuParams.id,
+                        password: encryptedPassword
+                    }
+
+                    login(postdata)
+                        .then((res) => {
+                            if (res.data.success == true) {
+                                if (res.data.data.role == 0) {
+                                    localStorage.setItem("token", res.data.data.token)
+                                    this.$router.push("/home/totalassessment")
+                                } else {
+                                    this.$router.push("/t_home/auditlist")
+
+                                }
+                            } else {
+                                alert("登录失败！！请检查学号或密码")
+                            }
+                        })
+                        .catch((err) => {
+                            console.log(err)
+                        })
+                })
+                .catch((error) => {
+                    console.error("获取公钥时出错：", error)
+                })
+        },
     },
-    beforeMount() {
-      this.StuParams.username = this.username;
-      this.StuParams.password = this.password;
-      this.login();
-    },
-  };
+}
+
 </script>
 
 <style scoped>
-  .Container {
+.Container {
     width: 100vw;
     height: 100vh;
     background-image: url(../../assets/img/login.png);
@@ -85,8 +92,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-  .btn {
+}
+
+.btn {
     width: 8.75rem;
     height: 2.875rem;
     border-radius: 1.4375rem;
@@ -97,14 +105,16 @@
     transition: 0.2s;
     cursor: pointer;
     margin-top: 2rem;
-  }
-  .btn:hover {
+}
+
+.btn:hover {
     width: 9rem;
     height: 3rem;
     background-color: #4176e9;
-  }
-  input[type="password"],
-  input[type="text"] {
+}
+
+input[type="password"],
+input[type="text"] {
     width: 18rem;
     height: 2.875rem;
     opacity: 1;
@@ -118,39 +128,46 @@
     transition: 0.5s;
     font-size: 1rem;
     color: rgba(166, 166, 166, 1);
-  }
-  input[type="password"]:focus,
-  input[type="text"]:focus {
+}
+
+input[type="password"]:focus,
+input[type="text"]:focus {
     width: 22rem;
     height: 3.5rem;
     font-size: 1.5rem;
-  }
-  input:focus::-webkit-input-placeholder {
-    color: transparent;
-  }
+}
 
-  .mainBox {
+input:focus::-webkit-input-placeholder {
+    color: transparent;
+}
+
+.mainBox {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 6vh;
-  }
-  .box {
+}
+
+.box {
     width: 20%;
     margin-top: 15vh;
-  }
-  .box img {
+}
+
+.box img {
     width: 100%;
-  }
-  .title {
+}
+
+.title {
     margin-top: 5vh;
     width: 25%;
-  }
-  .title img {
+}
+
+.title img {
     width: 100%;
-  }
-  input[type="password"],
-  input[type="submit"] {
+}
+
+input[type="password"],
+input[type="submit"] {
     margin-top: 4vh;
-  }
+}
 </style>
