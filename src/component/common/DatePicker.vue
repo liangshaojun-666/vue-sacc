@@ -12,6 +12,7 @@
 </template>
 
 <script>
+import { studentPage } from "../../api/Student"
 export default {
     data () {
         return {
@@ -33,11 +34,27 @@ export default {
     methods: {
         handleOptionClick (item) {
             // console.log("Selected Year:", item.year);
-            console.log("Selected ID:", item.id)
+            // console.log("Selected ID:", item.id)
             this.emitEvent(item) // 向父组件传递选中的对象
+
         },
         emitEvent (item) {
             this.$emit("childEvent", item)
+            let year = item.year - 1
+            console.log(studentPage)
+            console.log(year)
+
+            studentPage(year)
+                .then((response) => {
+                    // 处理返回的数据           
+                    console.log('111')
+                    console.log(response)
+
+                })
+                .catch((error) => {
+                    // 处理错误
+                    console.error(error)
+                })
         },
     },
 }

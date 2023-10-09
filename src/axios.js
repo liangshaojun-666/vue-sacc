@@ -22,7 +22,7 @@ request.interceptors.request.use(
     ///////
     //如果该url不在api白名单里，并且你已经登录了，就向请求头里存一下token.
     if (whiteList.indexOf(url) === -1 && token) {
-      config.headers.token = token;
+      config.headers.TOKEN = token;
     }
     return config;
   },

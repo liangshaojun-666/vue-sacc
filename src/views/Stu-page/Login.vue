@@ -10,7 +10,7 @@
             <input type="text" placeholder="输入学号/工号" v-model="StuParams.id" />
             <input type="password" placeholder="输入统一身份认证密码" v-model="StuParams.plainPassword" />
             <button class="btn" @click="login">登录</button>
-            <button class="btn" @click="go">fake登录</button>
+            <!-- <button class="btn" @click="go">fake登录</button> -->
         </div>
     </div>
 </template>
@@ -53,10 +53,12 @@ export default {
                     login(postdata)
                         .then((res) => {
                             if (res.data.success == true) {
-                                if (res.data.role == 0) {
+                                if (res.data.data.role == 0) {
+                                    localStorage.setItem("token", res.data.data.token)
                                     this.$router.push("/home/totalassessment")
                                 } else {
                                     this.$router.push("/t_home/auditlist")
+
                                 }
                             } else {
                                 alert("登录失败！！请检查学号或密码")

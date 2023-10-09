@@ -28,12 +28,10 @@ export function logout() {
 }
 
 // 3）主页
-// import Todata from "../views/Stu-page/TotalAssessment.vue";
 export const studentPage = (year) => {
   return request({
-    url: "/student/{year}",
+    url: `/student/${year}`,
     method: "GET",
-    params: { year: year },
   });
 };
 
@@ -42,7 +40,6 @@ export const getMoral = (year) => {
   return request({
     url: "/student/moral_quality_score/{year}",
     method: "GET",
-    params: { year: year },
   });
 };
 //5)获取能力分申报
